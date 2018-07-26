@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="user">
+
+      <img src="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{user.name +' '+ user.surname}}
+      </ion-card-title>
+      <p>
+        {{user.nick}}
+      </p>
+    </ion-card-content>
+
+    <button ion-button color="dark" round (click)="editUserModal()">Editar datos</button>
+
+    <button ion-button color="dark" outline (click)="logout()">Cerrar sesion</button>
+
+  </ion-card>
+</ion-content>

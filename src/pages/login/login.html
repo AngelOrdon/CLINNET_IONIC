@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" #email="ngModel" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-label floating>Contraseña</ion-label>
+          <ion-input type="password" #password="ngModel" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required></ion-input>
+      </ion-item>
+    
+    <div padding>
+        <button ion-button type="submit" value="Entrar" [disabled]="!loginForm.form.valid" block>Login</button>
+    </div>
+    <div padding>
+        <button ion-button color="secondary" clear (click)="registerPage()">Eres nuevo ¡Resitrate aqui!</button>
+    </div>
+	</form>
+
+</ion-content>

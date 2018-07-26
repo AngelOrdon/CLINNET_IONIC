@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()">
+
+      <ion-item>
+          <ion-label floating>Nombre</ion-label>
+          <ion-input type="text" #name="ngModel" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Apellido</ion-label>
+          <ion-input type="text" #surname="ngModel" [(ngModel)]="user.surname" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Apodo</ion-label>
+          <ion-input type="text" #nick="ngModel" [(ngModel)]="user.nick" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" #email="ngModel" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+          <ion-label floating>Contraseña</ion-label>
+          <ion-input type="password" #password="ngModel" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Rol</ion-label>
+          <ion-select #role="ngModel" [(ngModel)]="user.role" [ngModelOptions]="{standalone: true}">
+            <ion-option value="Estudiante">Paciente</ion-option>
+            <ion-option value="Profesor">Doctor</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <div padding>
+          <button ion-button type="submit" block>Registrar</button>
+      </div>
+  </form>
+</ion-content>
+
+<!--
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+</ion-list>
+-->
